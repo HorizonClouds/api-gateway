@@ -1,0 +1,121 @@
+services:
+
+# GLOBAL SERVICES
+  apiGateway:
+    name: api-gateway
+    type: gateway
+    path: /
+    url: http://localhost:6900
+
+  logger:
+    name: logger
+    type: communication
+    path: null
+    url: http://localhost:6901
+
+  frontend:
+    name: frontend
+    type: service
+    path: /frontend
+    url: http://localhost:6902
+    
+  kafka:
+    name: kafka
+    type: communication
+    path: /kafka
+    url: http://localhost:9092
+
+  zookeeper:
+    name: Zookeeper
+    type: storage
+    path: /zookeeper
+    url: http://localhost:2181
+
+# SERVICES TEAM 1
+  feeds:
+    name: feeds
+    type: service
+    path: /feeds
+    url: http://localhost:6101
+  
+  feedsMongo:
+    name: feeds-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6102
+
+  chats:
+    name: chats
+    type: service
+    path: /chats
+    url: http://localhost:6103
+  
+  chatsMongo:
+    name: chats-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6104
+
+# SERVICES TEAM 2
+  user:
+    name: user
+    type: service
+    path: /user
+    url: http://localhost:6201
+  
+  userMongo:
+    name: user-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6202
+
+# SERVICES TEAM 3
+  analyticsReports:
+    name: analytics-reports
+    type: service
+    path: /analytics-reports
+    url: http://localhost:6301
+
+  notifications:
+    name: notifications
+    type: service
+    path: /notifications
+    url: http://localhost:6303
+
+# SERVICES TEAM 4
+  itineraries:
+    name: itineraries
+    type: service
+    path: /itineraries
+    url: http://localhost:6401
+  
+  itinerariesMongo:
+    name: itineraries-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6402
+
+  meteo:
+    name: meteo
+    type: service
+    path: /meteo
+    url: http://localhost:6403
+    
+  itinerariesRedis:
+    name: itineraries-REDIS
+    type: storage
+    path: product
+    url: http://localhost:6404
+
+# SERVICES TEAM 5
+  publications:
+    name: publications
+    type: service
+    path: /publications
+    url: http://localhost:6501
+  
+  publicationsMongo:
+    name: publications-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6502

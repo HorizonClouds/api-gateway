@@ -66,7 +66,7 @@ router.post('/', (req, res) => {
 
     const tokenPayload = {
         user: {
-            userId: user.userId,
+            userId: user.id,
             roles: user.roles,
             plan: user.plan,
             addons: user.addons,

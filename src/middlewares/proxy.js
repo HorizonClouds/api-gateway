@@ -23,11 +23,18 @@ const proxy = (req, res, next) => {
 
     createProxyMiddleware({
         target: serviceUrl,
-        changeOrigin: false,
+        changeOrigin: true,
         pathRewrite: {
         // Remove the service name from the path
             [`^/${serviceName}`]: '',
         },
+        on: {
+            error: (err, req, res) => {
+                console.log('Proxy error:', err);
+                err.target = serviceUrl;
+                standardResponse.sendError(res, err);
+            }
+        }
     })(req, res, next);
 };
 

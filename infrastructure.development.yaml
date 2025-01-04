@@ -57,13 +57,13 @@ services:
     url: mongodb://localhost:6104
 
 # SERVICES TEAM 2
-  user:
+  users:
     name: user
     type: service
     path: /user
     url: http://localhost:6201
   
-  userMongo:
+  usersMongo:
     name: user-mongo
     type: storage
     path: null
@@ -101,8 +101,8 @@ services:
     path: /meteo
     url: http://localhost:6403
     
-  itinerariesRedis:
-    name: itineraries-REDIS
+  meteoRedis:
+    name: meteo-redis
     type: storage
     path: product
     url: http://localhost:6404

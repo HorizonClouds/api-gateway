@@ -13,6 +13,7 @@ const config = {
     infrastructure: infrastructure,
     throttleLimit: process.env.THROTTLE_LIMIT || 100,
     throttleWindow: process.env.THROTTLE_WINDOW || 15,  // in minutes
+    jwtSecret: process.env.JWT_SECRET || 'horizon-secret',
 };
 
 export default config;

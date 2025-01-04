@@ -1,0 +1,133 @@
+services:
+
+# GLOBAL SERVICES
+  apiGateway:
+    name: api-gateway
+    type: gateway
+    path: /
+    url: http://api-gateway:80
+
+  logger:
+    name: logger
+    type: communication
+    path: null
+    url: http://logger:80
+
+  frontend:
+    name: frontend
+    type: service
+    path: /frontend
+    url: http://frontend:80
+    
+  kafka:
+    name: kafka
+    type: communication
+    path: /kafka
+    url: http://kafka:9092
+
+  zookeeper:
+    name: zookeeper
+    type: storage
+    path: /zookeeper
+    url: http://zookeeper:2181
+
+# SERVICES TEAM 1
+  feeds:
+    name: feeds
+    type: service
+    path: /feeds
+    url: http://feeds:80
+  
+  feedsMongo:
+    name: horizon-mongo-feeds
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-feeds:27017
+
+  chats:
+    name: chats
+    type: service
+    path: /chats
+    url: http://chats:80
+  
+  chatsMongo:
+    name: horizon-mongo-chats
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-chats:27017
+
+# SERVICES TEAM 2
+  users:
+    name: users
+    type: service
+    path: /users
+    url: http://users:80
+  
+  usersMongo:
+    name: horizon-mongo-users
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-users:27017
+
+# SERVICES TEAM 3
+  analyticsReports:
+    name: analytics-reports
+    type: service
+    path: /analytics-reports
+    url: http://analytics-reports:80
+
+  analyticsReportsMongo:
+    name: horizon-mongo-analytics-reports
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-analytics-reports:27017
+
+  notifications:
+    name: notifications
+    type: service
+    path: /notifications
+    url: http://notifications:80
+
+  notificationsMongo:
+    name: horizon-mongo-notifications
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-notifications:27017
+
+# SERVICES TEAM 4
+  itineraries:
+    name: itineraries
+    type: service
+    path: /itineraries
+    url: http://itineraries:80
+  
+  itinerariesMongo:
+    name: horizon-mongo-itineraries
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-itineraries:27017
+
+  meteo:
+    name: meteo
+    type: service
+    path: /meteo
+    url: http://meteo:80
+    
+  meteoRedis:
+    name: horizon-redis-meteo
+    type: storage
+    path: null
+    url: http://horizon-redis-meteo:6404
+
+# SERVICES TEAM 5
+  publications:
+    name: publications
+    type: service
+    path: /publications
+    url: http://publications:80
+  
+  publicationsMongo:
+    name: horizon-mongo-publications
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-publications:27017

@@ -6,7 +6,6 @@ import proxy from './middlewares/proxy.js';
 const app = express();
 const PORT = config.port;
 
-app.use(express.json());
 app.use(throttle);
 app.use('/api/v1', proxy);
 

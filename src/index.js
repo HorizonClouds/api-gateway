@@ -4,6 +4,8 @@ import { throttle } from './middlewares/throttling.js';
 import proxy from './middlewares/proxy.js';
 import fakeAuth from './utils/fakeAuth.js';
 import { users } from './utils/fakeAuth.js';
+import fs from 'fs';
+import yaml from 'js-yaml';
 
 const app = express();
 const PORT = config.port;
@@ -16,6 +18,23 @@ app.get('/api/v1/users/api/v1/users', (req, res) => {
     res.json(users);
 });
 //-------------------------------------------------------------
+app.get('/api/v1/infrastructure', (req, res) => {
+    //env as parameter
+    let env = req.query.env;
+    if(!env){
+        env = config.nodeEnv;
+    }
+    try {
+        let infrastructure = yaml.load(fs.readFileSync(`./infrastructure.${env}.yaml`, 'utf8'));
+        res.json(infrastructure);
+    }catch(err){
+        console.log("Failed to load infrastructure file, defaulting to loaded configuration");
+        return res.json(config.infrastructure);
+    }
+    let infrastructure = yaml.load(fs.readFileSync(`./infrastructure.${env}.yaml`, 'utf8'));
+    res.json(infrastructure);
+});
+    
 app.use('/api/v1', proxy);
 
 app.get('/', (req, res) => {

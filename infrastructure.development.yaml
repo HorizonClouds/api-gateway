@@ -73,7 +73,7 @@ services:
   analyticsReports:
     name: analytics-reports
     type: service
-    path: /analytics-reports
+    path: /analyticsReports
     url: http://localhost:6301
 
   notifications:

@@ -6,11 +6,13 @@ import fakeAuth from './utils/fakeAuth.js';
 import { users } from './utils/fakeAuth.js';
 import fs from 'fs';
 import yaml from 'js-yaml';
+import cors from 'cors';
 
 const app = express();
 const PORT = config.port;
 
 app.use(throttle);
+app.use(cors());
 //-------------------------------------------------------------
 // This should be deleted when the authentication service is ready in users microservice
 app.use('/api/v1/users/api/v1/login', fakeAuth);

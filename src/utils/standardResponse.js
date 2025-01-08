@@ -33,6 +33,17 @@ export const stdOptions = {
     },
   };
   
+  /**
+   * Sends a success response with the provided content.
+   *
+   * @param {Object} res - The response object.
+   * @param {Object} content - The content to send in the response.
+   * @param {Object} content.data - The data to include in the response.
+   * @param {string} [content.message='Success!'] - The success message.
+   * @param {number} [content.statusCode=200] - The HTTP status code.
+   * @param {string} [content.appCode='OK'] - The application-specific code.
+   * @param {Object} [content.details] - Additional details to include in the response.
+   */
   export function sendSuccess(res, content){
     let { data, message = 'Success!', statusCode = stdOptions.codes.success, appCode = stdOptions.appCodes.ok, details } = content;
     res.status(statusCode).json({

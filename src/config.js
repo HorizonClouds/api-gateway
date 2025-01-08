@@ -5,8 +5,7 @@ import yaml from 'js-yaml';
 
 
 const nodeEnv = process.env.NODE_ENV || 'development';
-const fileEnv = nodeEnv == 'production' ? 'prod' : 'dev';
-const infrastructure = yaml.load(fs.readFileSync(`./infrastructure.${fileEnv}.yaml`, 'utf8'));
+const infrastructure = yaml.load(fs.readFileSync(`./infrastructure.${nodeEnv}.yaml`, 'utf8'));
 
 const config = {
     port: process.env.PORT || 6900,
@@ -14,6 +13,7 @@ const config = {
     infrastructure: infrastructure,
     throttleLimit: process.env.THROTTLE_LIMIT || 100,
     throttleWindow: process.env.THROTTLE_WINDOW || 15,  // in minutes
+    jwtSecret: process.env.JWT_SECRET || 'horizon-secret',
 };
 
 export default config;

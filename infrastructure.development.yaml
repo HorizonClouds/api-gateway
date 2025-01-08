@@ -18,7 +18,6 @@ services:
     type: service
     path: /frontend
     url: http://localhost:6902
-    
   kafka:
     name: kafka
     type: communication
@@ -76,11 +75,23 @@ services:
     path: /analyticsReports
     url: http://localhost:6301
 
+  analyticsReportsMongo:
+    name: analyticsReports-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6302
+
   notifications:
     name: notifications
     type: service
     path: /notifications
     url: http://localhost:6303
+
+  notificationsMongo:
+    name: notifications-mongo
+    type: storage
+    path: null
+    url: mongodb://localhost:6304
 
 # SERVICES TEAM 4
   itineraries:

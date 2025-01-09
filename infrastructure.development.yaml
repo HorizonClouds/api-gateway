@@ -30,7 +30,7 @@ services:
     path: /zookeeper
     url: http://localhost:2181
 
-# SERVICES TEAM 1
+# SERVICES TEAM 4
   feeds:
     name: feeds
     type: service
@@ -55,20 +55,26 @@ services:
     path: null
     url: mongodb://localhost:6104
 
-# SERVICES TEAM 2
+  feedsRedis:
+    name: feeds-redis
+    type: storage
+    path: product
+    url: http://localhost:6105
+
+# SERVICES TEAM 1
   users:
-    name: user
+    name: users
     type: service
-    path: /user
+    path: /users
     url: http://localhost:6201
   
   usersMongo:
-    name: user-mongo
+    name: users-mongo
     type: storage
     path: null
     url: mongodb://localhost:6202
 
-# SERVICES TEAM 3
+# SERVICES TEAM 5
   analyticsReports:
     name: analytics-reports
     type: service
@@ -93,7 +99,7 @@ services:
     path: null
     url: mongodb://localhost:6304
 
-# SERVICES TEAM 4
+# SERVICES TEAM 3
   itineraries:
     name: itineraries
     type: service
@@ -118,7 +124,7 @@ services:
     path: product
     url: http://localhost:6404
 
-# SERVICES TEAM 5
+# SERVICES TEAM 2
   publications:
     name: publications
     type: service

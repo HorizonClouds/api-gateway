@@ -98,7 +98,7 @@ services:
     name: itineraries
     type: service
     path: /itineraries
-    url: http://localhost:6401
+    url: http://horizon-itineraries:6401
   
   itinerariesMongo:
     name: itineraries-mongo

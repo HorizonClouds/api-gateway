@@ -31,7 +31,7 @@ services:
     path: /zookeeper
     url: http://zookeeper:2181
 
-# SERVICES TEAM 1
+# SERVICES TEAM 4
   feeds:
     name: feeds
     type: service
@@ -56,7 +56,13 @@ services:
     path: null
     url: mongodb://horizon-mongo-chats:27017
 
-# SERVICES TEAM 2
+  feedsRedis:
+    name: horizon-redis-feeds
+    type: storage
+    path: null
+    url: http://horizon-redis-feeds:6105
+
+# SERVICES TEAM 1
   users:
     name: users
     type: service
@@ -69,7 +75,7 @@ services:
     path: null
     url: mongodb://horizon-mongo-users:27017
 
-# SERVICES TEAM 3
+# SERVICES TEAM 5
   analyticsReports:
     name: analytics-reports
     type: service
@@ -94,7 +100,7 @@ services:
     path: null
     url: mongodb://horizon-mongo-notifications:27017
 
-# SERVICES TEAM 4
+# SERVICES TEAM 3
   itineraries:
     name: itineraries
     type: service
@@ -119,7 +125,7 @@ services:
     path: null
     url: http://horizon-redis-meteo:6404
 
-# SERVICES TEAM 5
+# SERVICES TEAM 2
   publications:
     name: publications
     type: service

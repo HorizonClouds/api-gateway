@@ -1,0 +1,139 @@
+services:
+
+# GLOBAL SERVICES
+  apiGateway:
+    name: api-gateway
+    type: gateway
+    path: /
+    url: http://api-gateway:6900
+
+  logger:
+    name: logger
+    type: communication
+    path: null
+    url: http://logger:6901
+
+  frontend:
+    name: frontend
+    type: service
+    path: /frontend
+    url: http://frontend:6902
+    
+  kafka:
+    name: kafka
+    type: communication
+    path: /kafka
+    url: http://kafka:9092
+
+  zookeeper:
+    name: zookeeper
+    type: storage
+    path: /zookeeper
+    url: http://zookeeper:2181
+
+# SERVICES TEAM 1
+  feeds:
+    name: feeds
+    type: service
+    path: /feeds
+    url: http://feeds:6101
+  
+  feedsMongo:
+    name: horizon-mongo-feeds
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-feeds:6102
+
+  chats:
+    name: chats
+    type: service
+    path: /chats
+    url: http://chats:6103
+  
+  chatsMongo:
+    name: horizon-mongo-chats
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-chats:6104
+
+  feedsRedis:
+    name: horizon-redis-feeds
+    type: storage
+    path: null
+    url: http://horizon-redis-feeds:6105
+
+# SERVICES TEAM 2
+  users:
+    name: users
+    type: service
+    path: /users
+    url: http://users:6201
+  
+  usersMongo:
+    name: horizon-mongo-users
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-users:6202
+
+# SERVICES TEAM 2
+  analyticsReports:
+    name: analytics-reports
+    type: service
+    path: /analyticsReports
+    url: http://analytics-reports:6301
+
+  analyticsReportsMongo:
+    name: horizon-mongo-analytics-reports
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-analytics-reports:6302
+
+  notifications:
+    name: notifications
+    type: service
+    path: /notifications
+    url: http://notifications:6303
+
+  notificationsMongo:
+    name: horizon-mongo-notifications
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-notifications:6304
+
+# SERVICES TEAM 3
+  itineraries:
+    name: itineraries
+    type: service
+    path: /itineraries
+    url: http://itineraries:6401
+  
+  itinerariesMongo:
+    name: horizon-mongo-itineraries
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-itineraries:6402
+
+  meteo:
+    name: meteo
+    type: service
+    path: /meteo
+    url: http://meteo:6403
+    
+  meteoRedis:
+    name: horizon-redis-meteo
+    type: storage
+    path: null
+    url: http://horizon-redis-meteo:6404
+
+# SERVICES TEAM 2
+  publications:
+    name: publications
+    type: service
+    path: /publications
+    url: http://publications:6501
+  
+  publicationsMongo:
+    name: horizon-mongo-publications
+    type: storage
+    path: null
+    url: mongodb://horizon-mongo-publications:6502
